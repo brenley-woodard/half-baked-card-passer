@@ -2,13 +2,14 @@ import './App.css';
 import initialCards from './cards-data';
 import Player from './components/Player';
 import CardList from './components/CardList';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ExecutePassButton from './components/ExecutePassButton';
+import { GameContext } from './context/GameContext';
 
 function App() {
+  const { selectedCard, setSelectedCard } = useContext(GameContext);
   const [deck, setDeck] = useState(initialCards);
   const [playerOneHand, setPlayerOneHand] = useState([]);
-  const [selectedCard, setSelectedCard] = useState();
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
   const [from, setFrom] = useState('deck');
@@ -49,32 +50,30 @@ function App() {
           player={1}
           hand={playerOneHand}
           setFrom={setFrom}
-          selectedCard={selectedCard}
+          // selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
+          // setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
           player={2}
           hand={playerTwoHand}
           setFrom={setFrom}
-          selectedCard={selectedCard}
+          // selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
+          // setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
           player={3}
           hand={playerThreeHand}
           setFrom={setFrom}
-          selectedCard={selectedCard}
+          // selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
+          // setSelectedCard={setSelectedCard}
         />
         <CardList
           cards={deck}
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
           setFrom={setFrom}
           player={'deck'}
         />
