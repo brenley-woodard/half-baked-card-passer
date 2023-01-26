@@ -7,12 +7,12 @@ import ExecutePassButton from './components/ExecutePassButton';
 import { GameContext } from './context/GameContext';
 
 function App() {
-  const { selectedCard, setSelectedCard } = useContext(GameContext);
+  const { selectedCard, setSelectedCard, from } = useContext(GameContext);
   const [deck, setDeck] = useState(initialCards);
   const [playerOneHand, setPlayerOneHand] = useState([]);
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
-  const { from } = useContext(GameContext);
+  // const { from } = useContext(GameContext);
   const [to, setTo] = useState(1);
 
   function findCardIndex(value, suit, cards) {
