@@ -5,7 +5,6 @@ export default function Player({
   player,
   setTo,
   hand,
-  setFrom,
   to,
 }) {
   return (
@@ -17,7 +16,6 @@ export default function Player({
       <CardList
         player={player}
         cards={hand}
-        setFrom={setFrom}
       />
     </div>
   );
